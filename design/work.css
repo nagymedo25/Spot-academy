@@ -1,0 +1,340 @@
+.work-sec {
+   font-family: sans-serif;
+   background-color: var(--black);
+   display: flex;
+   flex-flow: row-reverse;
+   overflow: hidden;
+} 
+
+.work-sec aside {
+   height: 800px;
+   width: 300px;
+   background-color: rgb(35, 33, 44);
+   padding: 2rem 0;
+   transform: translateX(400px);
+   opacity: 0;
+}
+
+.work-sec aside h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 3rem;
+}
+
+.work-sec  li {
+    list-style: none;
+}
+
+.work-sec li  div {
+    width: 100%;
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    padding: 1rem 2rem;
+    font-size: 18px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    transition: .2s;
+}
+
+.work-sec aside .toggle {
+    display: none;
+}
+
+.work-sec li  div:hover {
+    cursor: pointer;
+    background-color: rgb(96, 102, 102);
+}
+
+.work-sec  div i{
+    color: var(--green);
+    font-size: 22px;
+}
+
+.work-sec  div .media {
+    font-size: 15px;
+}
+
+.work-sec .gallary {
+    flex-grow: 1;
+    padding: 3rem 4rem;
+    transform: translateX(-400px);
+    opacity: 0;
+}
+
+@keyframes aside {
+    0% {
+        transform: translateX(400px);
+        opacity: 0;
+    }100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes aside-reverse {
+    0% {
+        transform: translateX(-400px);
+        opacity: 0;
+    }100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.work-sec .gallary h3 {
+    text-align: center;
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.work-sec .gallary .photos {
+    width: 100%;
+    height: 620px;
+    overflow-y: scroll;
+    border: 1px solid gray;
+    padding: 3rem 1rem;
+    border-radius: 20px;
+
+}
+
+.work-sec .gallary .photos div {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.work-sec .gallary .photos::-webkit-scrollbar-thumb {
+    background-color: var(--green);
+    border-radius: 0 30px 20px 0;
+ }
+
+.work-sec .gallary .photos img {
+    height: 200px;
+    width: 200px;
+    border: .5px solid gray;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.work-sec .gallary .photos img:hover {
+    scale: .9;
+    box-shadow: 0px 0px 15px 0px white;
+}
+
+.work-sec aside .toggle {
+    display: none;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    background-color: black;
+    border: 2px solid gray;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.work-sec .drop-down {
+    padding: 20px;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    z-index: 997;
+    width: 100%;
+    background-color: rgb(35, 33, 44);
+    animation: drop 1s;
+    display: none;
+}
+
+/* RESPONSIVE */
+
+
+@media (max-width: 980px) {
+
+    .work-sec {
+        flex-flow: column;
+        position: relative;
+     } 
+
+     .work-sec aside {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 6rem 0 6rem;
+        z-index: 997;
+     }
+
+     .work-sec aside h2 {
+        margin-bottom: 2rem;
+     }
+
+     .work-sec aside ul {
+        display: none;
+     }
+
+     .work-sec aside .toggle {
+        display: block;
+        margin-bottom: 2rem;
+     }
+
+     .work-sec .gallary {
+        padding: 3rem 0rem;
+    }
+
+    .work-sec .gallary .photos {
+        border: none;
+        border-radius: 0;
+        height: fit-content;
+        overflow: hidden;
+    }
+
+    /* Responsive */
+
+ 
+
+    .work-sec #work-close {
+        display: none;
+    }
+
+    @keyframes drop {
+
+        0% {
+            transform: translateY(-400px);
+        }
+        100% {
+            transform: translateY(0px);
+
+        }
+        
+    }
+    
+}
+
+
+@media (max-width: 530px) {
+    .work-sec aside {
+        padding: 2rem 3rem 0 3rem;
+     }
+
+     .work-sec aside h2 {
+        font-size: 35px;
+     }
+
+     .work-sec aside .toggle {
+        height: 40px;
+        width: 40px;
+        font-size: 18px;
+     }
+
+     .work-sec .gallary .photos img {
+        width: 70%;
+     }
+}
+/* Displaying */
+
+.work-sec #s-h {
+    display: block;
+}
+
+.work-sec .h,
+.work-sec .h,
+.work-sec .h,
+.work-sec .h {
+    display: none;
+}
+
+/* sections */
+
+/* .work-sec .gallary .photos .media {
+    display: flex;
+} */
+
+.work-sec .gallary .photos .branding,
+.work-sec .gallary .photos .prints,
+.work-sec .gallary .photos .education,
+.work-sec .gallary .photos .logos {
+    display: none;
+}
+
+/* أنماط الخلفية الشفافة والشاشة التي تظهر الصورة */
+/* تصميم النافذة المنبثقة */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* الخلفية الشفافة */
+    z-index: 999;
+
+}
+
+/* تصميم الصورة */
+.popup-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* زر الإغلاق */
+#popup-close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* مربع عدد الصور */
+#image-count {
+    position: absolute;
+    top: 18px;
+    right: 80px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* تصميم الأسهم */
+.arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px;
+    user-select: none;
+    transition: 0.3s;
+}
+
+/* السهم الأيسر */
+#prev-arrow {
+    left: 0;
+    transform: translateY(-50%);
+}
+
+/* السهم الأيمن */
+#next-arrow {
+    right: 0;
+    transform: translateY(-50%);
+}
+
+/* تأثير hover للأسهم */
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}

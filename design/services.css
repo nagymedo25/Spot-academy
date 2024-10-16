@@ -1,0 +1,96 @@
+
+
+.serv-sec {
+    padding: 4rem 1rem;
+    background-color: rgb(22, 22, 22);
+    text-align: center;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+.serv-sec h2 {
+    font-size: 50px;
+    margin-bottom: 4rem;
+    transform: translateY(-100px);
+    opacity: 0;
+}
+
+@keyframes h2 {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@keyframes cards {
+    0% {
+        transform: translateY(300px);
+        opacity: 0;
+    }
+    100% {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+span {
+    color: var(--green);
+}
+
+.serv-sec .cards {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    transform: translateY(300px);
+    opacity: 0;
+}
+
+.serv-sec .cards .card {
+    width: 400px;
+    background-color: var(--black);
+    padding: 30px 40px;
+    border-radius: 15px;
+    border: 1px solid rgb(88, 88, 88);
+    transition: .5s;
+}
+
+.serv-sec .cards .card:hover {
+    box-shadow: 0px 0px 10px 0px var(--green);
+    scale: 1.03;
+}
+
+.serv-sec .cards .card * {
+    margin-bottom: 1.5rem;
+
+}
+
+.serv-sec .cards .card i {
+     color: var(--green);
+     font-size: 60px;
+     margin-bottom: 3rem;
+}
+
+.serv-sec .cards .card h3 {
+    font-size: 30px;
+}
+
+.serv-sec .cards .card p {
+    font-size: 18px;
+    color: rgb(207, 207, 207);
+    line-height: 1.5;
+}
+
+@media (max-width: 887px) {
+    .serv-sec {
+        padding: 4rem 2rem;
+    }
+    
+    .serv-sec h2 {
+        font-size: 45px;
+    }
+}
